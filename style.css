@@ -7,7 +7,17 @@ body {
   display: flex;
   justify-content: center;
 }
-
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/*Logo Format*/
+.brand-logo {
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+}
 .exam-container {
   width: 90%;
   max-width: 900px;
