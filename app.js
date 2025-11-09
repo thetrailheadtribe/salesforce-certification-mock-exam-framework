@@ -3,7 +3,6 @@ const EXAM_DURATION_SECONDS = 105 * 60; // 60 minutes (change as needed)
 const QUESTIONS_PER_ATTEMPT = 60; // null = use all; or set a number to sample
 let timeLeft = EXAM_DURATION_SECONDS;
 
-
 // State
 let questions = [];
 let currentQuestion = 0;
@@ -21,13 +20,8 @@ function shuffle(array) {
 
 // Load and init
 async function loadQuestions() {
-  try {
-    const res = await fetch('./questions.json');
-    const raw = await res.json();
-  } catch (err) {
-    document.getElementById('question').innerText = "Failed to load questions.";
-    console.error("Error loading questions:", err);
-  }
+  const res = await fetch('questions.json');
+  const raw = await res.json();
 
   // Shuffle entire question bank
   let pool = shuffle([...raw]);
